@@ -1,4 +1,18 @@
-guess=input("Guess the number 1-100")
-number=27
-if g in range(1,26,1):
-    print("Hint:You are close! Higher!")
+import random
+randomnum = (random.randint(0,101))
+num = int(input("Guess a number between 1-100: "))
+while num != randomnum:
+    if num < randomnum:
+        print("Higher! Guess again!")
+        num = num +1
+    elif num > randomnum:
+        print("Lower! Guess agian!")
+    else:
+        break
+    num = int(input("Guess a number between 1-100: "))
+    
+    if num == randomnum:
+        print("You got it!")
+    
+        
+
