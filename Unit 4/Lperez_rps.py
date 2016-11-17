@@ -29,8 +29,8 @@ def get_comp_move():
 #   purpose: allows the user to choose a number of rounds from 1 to 9.
 #   returns: the user-chosen number of rounds
 def get_rounds():
-    rounds=input("How many rounds do you want to play 1-9: ")
-    return rounds + " rounds"
+    rounds=int(input("How many rounds do you want to play 1-9: "))
+    return "{} rounds".format(rounds)
 
 #function name: get_round_winner
 #   arguments: player move, computer move
@@ -55,22 +55,17 @@ def get_round_winner(p1move, cmove):
         return ("You lose!")
     elif p1move == "scissors" and cmove == "paper":
         return ("You win!")
-#function name: get_full_move
-#   arguments: a single letter move 'r','p', or 's'
-#   purpose: returns the "full" word of a given move
-#   returns: returns a string based on the following:
-#               "Rock" if given "r"
-#               "Paper" if given "p"
-#               "Scissors" if given "s"
-def get_full_move(shortmove):
-    return 1
+
+    
 
 #function name: print_score
 #   arguments: player score, computer score, number of ties
 #   purpose: prints the scoreboard
 #   returns: none
 def print_score(pscore, cscore, ties):
-    return 1
+    pscore = 0
+    cscore = 0
+    ties = 0
 
 #function name: rps
 #   arguments: none
@@ -79,7 +74,15 @@ def print_score(pscore, cscore, ties):
 #   returns: none
 def rps():
     #code 
-    print(get_round_winner("rock","paper"))
+    rounds = get_rounds()
+    for rounds in range(1, rounds + 1):
+        move = get_p1_move()
+        randy = get_comp_move()
+        get_round_winner(p1move, cmove)
+        print_score(pscore, cscore, ties)
+        
+        
+        
 
 #function name: tests
 #   arguments: none
