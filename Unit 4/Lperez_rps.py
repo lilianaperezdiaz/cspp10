@@ -30,7 +30,7 @@ def get_comp_move():
 #   returns: the user-chosen number of rounds
 def get_rounds():
     rounds=int(input("How many rounds do you want to play 1-9: "))
-    return "{} rounds".format(rounds)
+    return rounds
 
 #function name: get_round_winner
 #   arguments: player move, computer move
@@ -74,22 +74,24 @@ def print_score(pscore, cscore, ties):
 #   returns: none
 def rps():
     #code 
+    
     rounds = get_rounds()
+    pscore=0
+    cscore=0
+    ties=0
     for rounds in range(1, rounds + 1):
-        move = get_p1_move()
+        p1move = get_p1_move()
         randy = get_comp_move()
-        get_round_winner(p1move, cmove)
-        print_score(pscore, cscore, ties)
+        get_round_winner(p1move, randy)
+        winner= print_score(pscore, cscore, ties)
+        print ("player chose {}".format( p1move))
+        print ("Computer chose {}".format( randy))
+        if winner == "player":
+            print("Player won!")
+        elif winner =="comp":
+           print("Computer won!")
+        else:
+            print("It's a tie!")
         
-        
-        
-
-#function name: tests
-#   arguments: none
-#   purpose: a place for you to write your tests.  replace 'rps' below
-#               with 'tests' to run this function instead of the game loop
-#   returns: none
-def test():
-    return 1
 
 rps()
