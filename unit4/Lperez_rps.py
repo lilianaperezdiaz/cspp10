@@ -41,7 +41,6 @@ def get_rounds():
 #               "comp" if computer won
 #               "tie" if it's a tie
 def get_round_winner(p1move, cmove):
-    # print("debug: comp is {} and player is {}".format(cmove,p1move))
     if p1move == cmove:
         return("Tie!")
     if p1move == "rock" and cmove == "paper":
@@ -74,7 +73,6 @@ def print_score(pscore, cscore, ties):
 #               all the other functions to create RPS
 #   returns: none
 def rps():
-    #code 
     pscore=0
     cscore=0
     ties=0
@@ -85,7 +83,6 @@ def rps():
         randy = get_comp_move()
         winner = get_round_winner(p1move, randy)
         print ("Computer chose {}".format( randy))
-        # print("debug: winner is {}".format(winner))
         if winner == "You win!":
             print("Player won!")
             pscore=  pscore+1
@@ -96,5 +93,6 @@ def rps():
             print("It's a tie!")
             ties = ties+1
         print_score(pscore,cscore,ties)
+        print("_________________________________")
 
 rps()
