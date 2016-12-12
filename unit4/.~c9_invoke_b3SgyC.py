@@ -1,5 +1,6 @@
 import random
 
+
 #function name: get_back
 #arguments: bank account
 #purpose to get the amount to be bet from the user. Validate the amount and repeatedly
@@ -12,9 +13,6 @@ def get_bet(bank_account):
         return("Your bet must be a positive integer higher than $0")
     if bet>100:
         return("You only have $100 in your bank account you cannot bet more!")
-    else:
-        bank_account=bank_account-bet
-        return bank_account
     return bet
 #function name: roll2dice
 #arguments: none
@@ -53,8 +51,6 @@ def second_roll_result(dice_sum,point_roll):
         return("You win!")
 
 def craps():
-    bank_account=100
-    get_bet(bank_account)
     dice = roll2dice()
     first_result = first_roll_result(dice)
     if first_result == "You win!":
