@@ -7,15 +7,14 @@ import random
 #returns:the chosen valid bet amount
     
 def get_bet(bank_account):
-    bet=int(input("How much whould you like to bet?: $"))
-    if bet<0:
-        return("Your bet must be a positive integer higher than $0")
-    if bet>100:
-        return("You only have $100 in your bank account you cannot bet more!")
-    else:
-        bank_account=bank_account-bet
-        return bank_account
-    return bet
+    while True:
+        bet=int(input("How much would you like to bet?: $"))
+        if bet < 0:
+            print("Your bet must be a positive integer higher than $0")
+        elif bet> 100:
+            print("You only have $100 to bet, you can't bet anymore!")
+        else:
+            return bet
 #function name: roll2dice
 #arguments: none
 #purpose: generates random dice roll for 2 dice and prints out what the 2 rolls are 
