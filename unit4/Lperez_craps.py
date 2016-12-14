@@ -39,9 +39,9 @@ def roll2dice():
 
 def first_roll_result(dice_sum):
     if dice_sum == 7 or dice_sum == 11:
-        return("You win!")
+        print("You win!")
     if dice_sum == 2 or dice_sum == 3 or dice_sum == 12:
-        return("You lose!")
+        print("You lose!")
     else:
         return dice_sum
         
@@ -61,9 +61,11 @@ def craps():
     elif first_result == "You lose!":
         print("You lose!")
     else:
+        
         print("point roll")
         dice = roll2dice()
         point_roll_result = second_roll_result(dice,first_result)
+        return
         
 craps()
     
