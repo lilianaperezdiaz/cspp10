@@ -40,16 +40,25 @@ def roll2dice():
 def first_roll_result(dice_sum):
     if dice_sum == 7 or dice_sum == 11:
         print("You win!")
-    if dice_sum == 2 or dice_sum == 3 or dice_sum == 12:
+    elif dice_sum == 2 or dice_sum == 3 or dice_sum == 12:
         print("You lose!")
     else:
         return dice_sum
         
 def second_roll_result(dice_sum,point_roll):
     if dice_sum == 7:
-        return("You lose!")
-    if dice_sum == point_roll:
-        return("You win!")
+        print("You lose!")
+    elif dice_sum == point_roll:
+        print("You win!")
+    else:
+        print("Try agian!")
+    return(second_roll_result)
+        
+
+def point_round(roll, point_roll):
+    while(roll != 7 and roll != point_roll):
+        print(get_bet(bank_account))
+        
 
 def craps():
     bank_account=100
@@ -61,11 +70,10 @@ def craps():
     elif first_result == "You lose!":
         print("You lose!")
     else:
-        
         print("point roll")
         dice = roll2dice()
         point_roll_result = second_roll_result(dice,first_result)
-        return
+        return(craps())
         
 craps()
     
