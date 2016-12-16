@@ -25,7 +25,7 @@ def roll2dice():
     dice2 = random.randint(1,6)
     dice_sum = dice1 + dice2
     print("Rolled 2 dice: {} {}".format(dice1,dice2))
-    print("Total: {}".format(dice1+dice2))
+    print("Dice roll total: {}".format(dice1+dice2))
     return dice_sum
     
     
@@ -57,7 +57,8 @@ def second_roll_result(dice_sum,point_roll):
 
 def point_round(roll, point_roll):
     while(roll != 7 and roll != point_roll):
-        print(get_bet(bank_account))
+        print(roll2dice)
+        return(second_roll_result(dice_sum,point_roll))
         
 
 def craps():
@@ -67,13 +68,14 @@ def craps():
     first_result = first_roll_result(dice)
     if first_result == "You win!":
         print("You won!")
+        print(craps)
     elif first_result == "You lose!":
         print("You lose!")
     else:
         print("point roll")
         dice = roll2dice()
         point_roll_result = second_roll_result(dice,first_result)
-        return(craps())
+        
         
 craps()
     
