@@ -52,13 +52,15 @@ def second_roll_result(dice_sum,point_roll):
         print("You win!")
     else:
         print("Try agian!")
-    return(second_roll_result)
+    while(roll2dice != 7 and roll2dice != point_roll):
+        print(roll2dice)
+        return(second_roll_result)
         
 
 def point_round(roll, point_roll):
-    while(roll != 7 and roll != point_roll):
+    while(roll2dice != 7 and roll2dice != point_roll):
         print(roll2dice)
-        return(second_roll_result(dice_sum,point_roll))
+        return(second_roll_result)
         
 
 def craps():
@@ -75,6 +77,7 @@ def craps():
         print("point roll")
         dice = roll2dice()
         point_roll_result = second_roll_result(dice,first_result)
+        return(craps())
         
         
 craps()
