@@ -83,6 +83,12 @@ def craps():
         point_roll_result = second_roll_result(dice,first_result)
         
     print("____________________________________")
+    while bank_account > 0:
+        if bank_account <= 0:
+            return("You have no more money in your bank account!")
+        elif bank_account > 0:
+            return craps()
+         
         
         
 craps()
