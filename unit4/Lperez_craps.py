@@ -1,5 +1,4 @@
 import random
-
 #function name: get_back
 #arguments: bank account
 #purpose to get the amount to be bet from the user. Validate the amount and repeatedly
@@ -8,12 +7,12 @@ import random
     
 def get_bet(bank_account):
     while True:
-        print("You have $100 in your bank account.")
+        print("You have ${} in your bank account.".format(bank_account))
         bet=int(input("How much would you like to bet?: $"))
         if bet < 0:
             print("Your bet must be a positive integer higher than $0")
         elif bet> 100:
-            print("You only have $100 to bet, you can't bet anymore!")
+            print("You only have $100 to bet, you can't bet anymore!".format(bank_account))
         else:
             return bet
 #function name: roll2dice
@@ -25,7 +24,7 @@ def roll2dice():
     dice1 = random.randint(1,6)
     dice2 = random.randint(1,6)
     dice_sum = dice1 + dice2
-    print("Rolled 2 dice: {} {}".format(dice1,dice2))
+    print("Rolled 2 dice: {} + {}".format(dice1,dice2))
     print("Dice roll total: {}".format(dice1+dice2))
     return dice_sum
     
@@ -40,8 +39,8 @@ def roll2dice():
 
 def first_roll_result(dice_sum):
     if dice_sum == 7 or dice_sum == 11:
-        print("You win!")
-        return "You win!"
+        print("You won!")
+        return "You won!"
     elif dice_sum == 2 or dice_sum == 3 or dice_sum == 12:
         print("You lose!")
         return "You lose!"
@@ -55,12 +54,18 @@ def second_roll_result(dice_sum,point_roll):
         print("You lose!")
         
     elif dice_sum == point_roll:
-        print("You win!")
+        print("You won!")
         
     else:
         while(dice_sum != 7 and dice_sum != point_roll):
             dice_sum=roll2dice()
-            return(second_roll_result)
+            if dice_sum == 7:
+                print("You lose!")
+                return "You lose!"
+            elif dice_sum == point_roll:
+                print("You won!")
+                return "You won"
+        
         
 
 
@@ -68,28 +73,41 @@ def second_roll_result(dice_sum,point_roll):
 
 def craps():
     bank_account=100
-    get_bet(bank_account)
-    dice = roll2dice()
-    first_result = first_roll_result(dice)
-    if first_result == "You win!":
-        print("You won!")
-        
-    elif first_result == "You lose!":
-        print("You lose!")
-        
-    else:
-        print("point roll")
+    while  bank_account > 0:
+        bet = get_bet(bank_account)
         dice = roll2dice()
-        point_roll_result = second_roll_result(dice,first_result)
+        first_result = first_roll_result(dice)
         
-    print("____________________________________")
-    while bank_account > 0:
-        if bank_account <= 0:
-            return("You have no more money in your bank account!")
-        elif bank_account > 0:
-            return craps()
+        if first_result == "You win!":
+            print("You won!")
+            bank_account= bank_account+bet
+            print ("You have ${} in your bank account".format(bank_account))
+            #what should happen to the bank account when they win?
+            
+        elif first_result == "You lose!":
+            print ("You lose!")
+            bank_account= bank_account-bet
+            print ("You have ${} in your bank account".format(bank_account))
+            #what should happen to the bank account when they lose?
+            
+        else:
+            print("point roll")
+            dice = roll2dice()
+            point_roll_result = second_roll_result(dice,first_result)
+            if point_roll_result == "You lose!":
+                print("You lose!")
+                bank_account= bank_account-bet
+                print ("You have ${} in your bank account".format(bank_account))
+            if point_roll_result == "You win!":
+                print("You won!")
+                bank_account= bank_account+bet
+                print("You have ${} in your bank account".format(bank_account))
+            
+            #how does the player know whether they won or lost?
+            
+        print("____________________________________")
+    
          
         
         
 craps()
-    
