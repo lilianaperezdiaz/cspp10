@@ -14,7 +14,7 @@ else:
         print ("{} {}" .format(number, noun[:-2] +"ves"))
     elif noun[-1:] == "y":
         print ("{} {}" .format(n,noun + "ies"))
-    elif noun[-2:]== "sh" or noun[-2:]== "ch":
+    elif noun[-2:]== "sh" or noun[-2:]== "ch":  1
         print ("{}{}" .format(n,noun + "es"))
     elif noun[-2:] == "us":
         print ("{} {}" .format(n,noun + "i"))

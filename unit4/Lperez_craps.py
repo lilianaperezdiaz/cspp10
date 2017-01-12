@@ -64,7 +64,7 @@ def second_roll_result(dice_sum,point_roll):
                 return "You lose!"
             elif dice_sum == point_roll:
                 print("You won!")
-                return "You won"
+                return "You won!"
         
         
 
@@ -75,18 +75,19 @@ def craps():
     bank_account=100
     while  bank_account > 0:
         bet = get_bet(bank_account)
+        bank_account = bank_account - bet
         dice = roll2dice()
         first_result = first_roll_result(dice)
         
         if first_result == "You win!":
             print("You won!")
-            bank_account= bank_account+bet
+            bank_account= bank_account+bet*2
             print ("You have ${} in your bank account".format(bank_account))
             #what should happen to the bank account when they win?
             
         elif first_result == "You lose!":
             print ("You lose!")
-            bank_account= bank_account-bet
+            
             print ("You have ${} in your bank account".format(bank_account))
             #what should happen to the bank account when they lose?
             
@@ -96,11 +97,12 @@ def craps():
             point_roll_result = second_roll_result(dice,first_result)
             if point_roll_result == "You lose!":
                 print("You lose!")
-                bank_account= bank_account-bet
+                
                 print ("You have ${} in your bank account".format(bank_account))
             if point_roll_result == "You win!":
                 print("You won!")
-                bank_account= bank_account+bet
+                bank_account= bank_account+bet*2
+                print("ejhrvkejrbv")
                 print("You have ${} in your bank account".format(bank_account))
             
             #how does the player know whether they won or lost?
