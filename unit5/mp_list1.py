@@ -10,5 +10,5 @@ while True:
         print(" {},".format(a_list))
     elif user_input <= -1:
         a_list.remove(user_input*-1)
-        print(" {},".format(a_list))
+        print(" {},".format(a_list))[]
  

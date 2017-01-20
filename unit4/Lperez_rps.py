@@ -82,7 +82,7 @@ def rps():
         p1move = get_p1_move()
         randy = get_comp_move()
         winner = get_round_winner(p1move, randy)
-        print ("Computer chose {}".format( randy))
+        print ("Computer chose {}".format(randy))
         if winner == "You win!":
             print("Player won!")
             pscore=  pscore+1
