@@ -6,7 +6,7 @@ import random
 #   returns: the player's move as either 'r', 'p', or 's'
 def get_p1_move():
     move=input("rock, paper, scissors: ")
-    return move
+    return move 
     
 
 #function name: get_comp_move():

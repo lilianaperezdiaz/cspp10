@@ -1,4 +1,4 @@
-#working w/Ethan Rivers
+#working w/Ethan
 a_list=[]
 while True:
     user_input=input("Enter an integer.")
