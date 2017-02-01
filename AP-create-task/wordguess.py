@@ -14,7 +14,7 @@ def get_rounds():
     
 def word_spaces(secret_word):
     if secret_word == "mother":
-        print("This word contains 5 letters.")
+        print("This word contains 6 letters.")
     elif secret_word == "timmy":
         print("This word contains 5 letters.")
     elif secret_word == "blackbear":
@@ -33,11 +33,11 @@ def mother_guess(guess,secret_word,already_guessed):
     while secret_word=="mother":
         if guess=="a" or guess=="b" or guess=="c" or guess=="d":
             return("Wrong guess again!")
-        elif guess=="e" or guess=="f" or guess=="g" or guess=="i":
+        elif guess=="f" or guess=="g" or guess=="i":
             return("Wrong guess again!")
         elif guess=="j" or guess=="k" or guess=="l" or guess=="n":
             return("Wrong guess again!")
-        elif guess=="p" or guess=="q" or guess=="s" or guess=="t":
+        elif guess=="p" or guess=="q" or guess=="s":
             return("Wrong guess again!")
         elif guess=="u" or guess=="v" or guess=="w" or guess=="x":
             return("Wrong guess again!")
@@ -59,7 +59,7 @@ def timmy_guess(guess,secret_word,already_guessed):
             return("Wrong guess again!")
         elif guess=="u" or guess=="v" or guess=="w" or guess=="x":
             return("Wrong guess again!")
-        elif guess=="z":
+        elif guess=="z" or guess=="r":
             print("Wrong guess again!")
         else:
             #fill in word space
@@ -69,7 +69,7 @@ def blackbear_guess(guess,secret_word,already_guessed):
         if guess=="d" or guess=="f" or guess=="g" or guess=="i":
             return("Wrong guess again!")
             #store this guess in already guessed
-        elif guess=="j" or guess=="k" or guess=="n" or guess=="h":
+        elif guess=="j" or guess=="n" or guess=="h":
             return("Wrong guess again!")
         elif guess=="p" or guess=="q" or guess=="s" or guess=="t":
             return("Wrong guess again!")
@@ -91,7 +91,7 @@ def believe_guess(guess,secret_word,already_guessed):
             return("Wrong guess again!")
         elif guess=="p" or guess=="q" or guess=="s" or guess=="t":
             return("Wrong guess again!")
-        elif guess=="u" or guess=="w" or guess=="x":
+        elif guess=="u" or guess=="w" or guess=="x" or guess=="r":
             return("Wrong guess again!")
         elif guess=="y" or guess=="z" or guess=="o":
             return("Wrong guess again!")
@@ -131,11 +131,11 @@ def wordguess():
     rounds = get_rounds()
     secret_word=random_word(WORDS)
     already_guessed=[]
-    mother_list=[]
-    timmy_list=[]
-    blackbear_list=[]
-    believe_list=[]
-    purpose_list=[]
+    mother_list=["______"]
+    timmy_list=["_____"]
+    blackbear_list=["_________"]
+    believe_list=["_______"]
+    purpose_list=["_______"]
     
     while True:
         spaces= word_spaces(secret_word)
