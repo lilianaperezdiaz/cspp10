@@ -3,16 +3,19 @@ word="issues"
 
 #function name: scramble_word()
 #   arguments:word
-#   purpose:keep the first and the last letters and scarble the rest, use random.shuffle()
-#           make the string a list and use the index to keep the first and last letters in place
-#           and print the final crambled word
-#   returns:the scarbled word
 def scramble_word(word):
+    #make the string a list so that you can use the index
     list(word)
+    #remove the first and last letters of the word so that they are not scrambled
     same_letter=word[0:-1]
+    #shuffle the rest of the letters left
     random.shuffle(word)
-    print("{}".format(same_letter+word))
-    return word
+    #put the word back together
+    shuffled_word=same_letter+word
+    #print the word
+    print("{}".format(shuffled_word)
+    #return the word
+    return (word)
     
 
 sentence="The tree threw three tanks today."
