@@ -26,7 +26,18 @@ def update():
     print(empty)
     
 def dictionary_assignment():
-    while True:
-        
+    user_input=("i")
+    while user_input != "Exit":
+        print("What would you like to do to your dictionary?")
+        user_input=input("add, remove, update, print or exit: ")
+        if user_input == "add":
+            add()
+        elif user_input == "remove":
+            remove()
+        elif user_input == "update":
+            update()
+        elif user_input == "print":
+            from
+            
     
         
